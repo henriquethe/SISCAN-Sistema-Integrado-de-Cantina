@@ -1,305 +1,220 @@
-<div align="center">
-
 # 🏪 Sistema Cantina
 
-### Sistema de Gerenciamento de Estoque para Cantina Escolar
+**Sistema de gerenciamento de estoque e vendas para cantina escolar.**
 
-Uma solução para organizar produtos, controlar o estoque e facilitar o gerenciamento de uma cantina escolar.
+Projeto acadêmico desenvolvido em Python com o objetivo de facilitar o controle de produtos, movimentações de estoque, vendas e datas de validade em uma cantina escolar.
 
-<br>
-
-![Python](https://img.shields.io/badge/Python-172554?style=for-the-badge&logo=python&logoColor=7DE3A0)
-![SQLite](https://img.shields.io/badge/SQLite-172554?style=for-the-badge&logo=sqlite&logoColor=7DE3A0)
-![GitHub](https://img.shields.io/badge/GitHub-172554?style=for-the-badge&logo=github&logoColor=7DE3A0)
-
-</div>
-
-
-## 📋 Sobre o Projeto
-
-Este projeto consiste no desenvolvimento de um sistema de gerenciamento de estoque para uma cantina escolar.
-
-O sistema foi desenvolvido com o objetivo de facilitar o controle dos produtos vendidos pela cantina, permitindo registrar entradas, saídas e vendas, além de acompanhar a quantidade disponível em estoque.
-
-A proposta surgiu a partir da identificação de dificuldades no controle manual dos produtos, como desperdícios, falta de produtos e diferenças entre a quantidade registrada e a quantidade realmente existente.
+https://github.com/henriquethe
+\
 
 ---
 
-## 🎯 Objetivo
+## 📑 Sumário
 
-O principal objetivo do sistema é oferecer uma forma simples e organizada de controlar o estoque da cantina escolar.
-
-O sistema deverá permitir:
-
-- Cadastrar produtos;
-- Controlar a quantidade disponível;
-- Registrar entradas de produtos;
-- Registrar saídas de produtos;
-- Registrar vendas;
-- Controlar produtos próximos do vencimento;
-- Identificar produtos com estoque baixo;
-- Consultar informações do estoque;
-- Gerar relatórios;
-- Evitar que a quantidade de produtos fique negativa.
-
----
-
-## 👥 Usuários do Sistema
-
-O sistema terá dois tipos principais de usuários:
-
-### 👤 Responsável pela Cantina
-
-Será responsável pelas operações do dia a dia, podendo:
-
-- Cadastrar produtos;
-- Registrar entradas;
-- Registrar saídas;
-- Registrar vendas;
-- Consultar informações do estoque.
-
-### 🏫 Direção da Escola
-
-Terá acesso às informações para acompanhamento e controle, podendo:
-
-- Consultar o estoque;
-- Visualizar relatórios;
-- Acompanhar as vendas;
-- Verificar produtos com estoque baixo;
-- Verificar produtos próximos do vencimento.
-
-Essas permissões foram definidas durante o levantamento de requisitos realizado com a responsável pela cantina.
+* [Sobre o projeto](#-sobre-o-projeto)
+* [Objetivos](#-objetivos)
+* [Funcionalidades](#-funcionalidades)
+* [Usuários do sistema](#-usuários-do-sistema)
+* [Tecnologias utilizadas](#-tecnologias-utilizadas)
+* [Regras de negócio](#-regras-de-negócio)
+* [Estrutura do sistema](#-estrutura-do-sistema)
+* [Demonstração](#-demonstração)
+* [Banco de dados e backup](#-banco-de-dados-e-backup)
+* [Levantamento de requisitos](#-levantamento-de-requisitos)
+* [Status do projeto](#-status-do-projeto)
+* [Finalidade acadêmica](#-finalidade-acadêmica)
+* [Participantes](#-participantes)
 
 ---
 
-## 🛒 Produtos
+## 📋 Sobre o projeto
 
-O sistema poderá trabalhar com diferentes tipos de produtos vendidos na cantina, como:
+O **Sistema Cantina** é um projeto acadêmico voltado ao desenvolvimento de uma solução para gerenciamento de estoque e vendas em uma cantina escolar.
 
-- Salgados;
-- Refrigerantes;
-- Sucos;
-- Água;
-- Doces;
-- Biscoitos.
+A proposta surgiu da necessidade de melhorar o controle dos produtos, reduzindo problemas comuns no gerenciamento manual, como falta de mercadorias, desperdício de alimentos e divergências entre o estoque físico e os registros.
 
-Cada produto terá informações como:
+O sistema busca centralizar as informações em uma interface organizada, permitindo acompanhar os produtos cadastrados, registrar movimentações e consultar informações importantes para o funcionamento da cantina.
 
-- Nome;
-- Código;
-- Categoria;
-- Preço;
-- Quantidade;
-- Estoque mínimo;
-- Fornecedor.
+## 🎯 Objetivos
 
+O principal objetivo é desenvolver uma aplicação que facilite o gerenciamento das operações diárias da cantina escolar.
 
----
+Entre os objetivos específicos estão:
 
-## 📦 Controle de Estoque
+* Organizar o cadastro dos produtos.
+* Controlar as entradas e saídas do estoque.
+* Registrar as vendas e atualizar as quantidades automaticamente.
+* Identificar produtos com estoque abaixo do mínimo.
+* Acompanhar lotes e datas de validade.
+* Disponibilizar informações para consulta e geração de relatórios.
+* Reduzir erros no controle manual do estoque.
 
-O estoque será atualizado de acordo com as movimentações realizadas.
+## ✨ Funcionalidades
 
-### Entrada
+O projeto contempla as seguintes funcionalidades:
 
-Quando novos produtos chegarem à cantina, a quantidade recebida será registrada e adicionada ao estoque.
+| Funcionalidade            | Descrição                                                          |
+| ------------------------- | ------------------------------------------------------------------ |
+| Cadastro de produtos      | Registrar informações dos produtos comercializados.                |
+| Controle de estoque       | Acompanhar as quantidades disponíveis.                             |
+| Entrada de produtos       | Adicionar ao estoque as quantidades recebidas.                     |
+| Saída de produtos         | Registrar perdas, vencimentos, danos e outras retiradas.           |
+| Controle de vendas        | Registrar vendas e descontar automaticamente os produtos vendidos. |
+| Alerta de estoque baixo   | Identificar produtos abaixo da quantidade mínima definida.         |
+| Controle de validade      | Acompanhar lotes e datas de vencimento.                            |
+| Pesquisa de produtos      | Facilitar a localização de itens cadastrados.                      |
+| Relatórios                | Consultar informações sobre estoque, movimentações e vendas.       |
+| Gerenciamento de usuários | Diferenciar os usuários e suas permissões de acesso.               |
+| Backup                    | Criar cópias de segurança do banco de dados.                       |
 
-### Saída
+> **Observação:** a disponibilidade de cada funcionalidade depende da implementação atual do sistema. Consulte a seção [Status do projeto](#-status-do-projeto).
 
-A saída poderá ocorrer principalmente por:
+## 👥 Usuários do sistema
 
-- Venda;
-- Produto vencido;
-- Produto danificado;
-- Produto perdido.
+O sistema foi planejado para atender a dois perfis principais.
 
-As entradas aumentam a quantidade disponível e as saídas diminuem a quantidade.
+### Responsável pela cantina
 
-O sistema não permitirá que o estoque fique com quantidade negativa.
+Responsável pelas operações diárias, incluindo:
 
+* Cadastro e consulta de produtos.
+* Registro de entradas e saídas.
+* Registro de vendas.
+* Acompanhamento das quantidades disponíveis.
 
----
+### Direção da escola
 
-## 💰 Controle de Vendas
+Responsável pelo acompanhamento das informações e pela supervisão, incluindo:
 
-O sistema também terá controle das vendas realizadas na cantina.
+* Consulta do estoque.
+* Visualização dos relatórios.
+* Acompanhamento das vendas.
+* Verificação de produtos com estoque baixo.
+* Consulta de produtos próximos do vencimento.
 
-Quando uma venda for registrada:
+As permissões de cada perfil deverão ser aplicadas de acordo com as funcionalidades implementadas.
 
-1. O produto será selecionado;
-2. A quantidade vendida será informada;
-3. O sistema registrará a venda;
-4. A quantidade será retirada automaticamente do estoque.
+## 🛠️ Tecnologias utilizadas
 
-Dessa forma, o estoque poderá permanecer atualizado de acordo com as vendas realizadas.
+| Tecnologia                        | Finalidade                                                          |
+| --------------------------------- | ------------------------------------------------------------------- |
+| [Python](https://www.python.org/) | Desenvolvimento da aplicação e implementação das regras de negócio. |
+| [SQLite](https://www.sqlite.org/) | Armazenamento e consulta dos dados.                                 |
+| [Git](https://git-scm.com/)       | Controle de versão do código-fonte.                                 |
+| [GitHub](https://github.com/)     | Hospedagem do repositório e acompanhamento do desenvolvimento.      |
 
----
+## 📐 Regras de negócio
 
-## ⚠️ Alertas
+O funcionamento do sistema deverá respeitar as seguintes regras:
 
-O sistema contará com mecanismos para auxiliar no controle do estoque.
+1. Todo produto deve possuir as informações necessárias para seu cadastro.
+2. Toda entrada deve aumentar a quantidade disponível.
+3. Toda saída deve diminuir a quantidade disponível.
+4. Toda venda registrada deve gerar a respectiva baixa no estoque.
+5. O sistema não deve permitir que a quantidade em estoque fique negativa.
+6. Cada produto pode possuir uma quantidade mínima definida.
+7. Produtos abaixo do estoque mínimo devem gerar um alerta.
+8. Os produtos podem ser organizados por lotes.
+9. Os lotes podem possuir datas de validade.
+10. Produtos próximos do vencimento devem ser identificados.
+11. As movimentações devem ser registradas para permitir consultas posteriores.
 
-### 🔻 Estoque Baixo
+## 🗂️ Estrutura do sistema
 
-Cada produto terá uma quantidade mínima definida.
+O sistema foi organizado conceitualmente em módulos que representam as principais operações da cantina.
 
-Quando a quantidade disponível ficar abaixo desse limite, o sistema deverá apresentar um alerta.
+* **Produtos:** cadastro, pesquisa e consulta de produtos.
+* **Estoque:** controle das quantidades e movimentações.
+* **Vendas:** registro das vendas e atualização do estoque.
+* **Alertas:** identificação de estoque baixo e produtos próximos do vencimento.
+* **Relatórios:** apresentação das informações para consulta.
+* **Usuários:** gerenciamento dos acessos.
+* **Banco de dados:** persistência das informações.
 
-### ⏰ Produtos Próximos do Vencimento
+Essa divisão representa a organização funcional prevista para o projeto. A estrutura final dos arquivos e módulos dependerá da implementação do código-fonte.
 
-Os produtos poderão ser organizados por lotes e terão suas respectivas datas de validade.
-
-O sistema poderá apresentar um alerta para produtos que estejam próximos do vencimento.
-
----
-
-## 📊 Painel do Sistema
-
-O sistema terá um painel principal para facilitar a visualização das informações da cantina.
-
-O protótipo inicial do painel apresenta:
-
-- 👤 Identificação do usuário;
-- 📦 Quantidade de produtos;
-- ⚠️ Produtos com estoque baixo;
-- ⏰ Produtos vencidos ou próximos do vencimento;
-- 💰 Valor das vendas;
-- 🔎 Campo de pesquisa;
-- ➕ Botão para cadastrar um novo produto;
-- 📋 Lista de produtos cadastrados.
-
-O painel foi pensado para apresentar as principais informações de forma rápida, permitindo que o responsável pela cantina acompanhe a situação do estoque sem precisar acessar várias telas.
-
----
-
-## 📑 Relatórios
-
-O sistema deverá disponibilizar relatórios relacionados ao funcionamento da cantina, incluindo:
-
-- Relatório do estoque atual;
-- Produtos com estoque baixo;
-- Produtos próximos do vencimento;
-- Entradas de produtos;
-- Saídas de produtos;
-- Vendas realizadas.
-
----
-
-## 🗄️ Banco de Dados
-
-Inicialmente, o sistema utilizará o **SQLite** para armazenamento dos dados.
-
-As informações armazenadas poderão incluir:
-
-- Produtos;
-- Categorias;
-- Estoque;
-- Entradas;
-- Saídas;
-- Vendas;
-- Lotes e validade;
-- Usuários.
-
-O uso de um banco de dados permitirá manter as informações organizadas e facilitar futuras consultas.
-
----
-
-## 💾 Backup
-
-Para evitar a perda das informações, será realizada periodicamente uma cópia do banco de dados.
-
-O backup terá como objetivo preservar os registros da cantina caso ocorra algum problema com os dados originais.
-
----
-
-## 🛠️ Tecnologias
-
-As tecnologias previstas para o desenvolvimento do projeto são:
-
-- **Python** - linguagem principal;
-- **SQLite** - banco de dados;
-- **Git** - controle de versão;
-- **GitHub** - armazenamento e acompanhamento do projeto.
-
----
-
-## 📌 Regras do Sistema
-
-O sistema deverá seguir algumas regras principais:
-
-1. Todo produto deverá possuir informações básicas para seu cadastro.
-2. Toda entrada deverá aumentar a quantidade disponível.
-3. Toda saída deverá diminuir a quantidade disponível.
-4. Uma venda deverá gerar uma saída do produto.
-5. O estoque nunca poderá ficar negativo.
-6. Cada produto poderá possuir uma quantidade mínima.
-7. Produtos abaixo do estoque mínimo deverão gerar um alerta.
-8. Os produtos poderão ser organizados por lotes.
-9. Os lotes poderão possuir datas de validade.
-10. Produtos próximos do vencimento poderão gerar alertas.
-11. As movimentações deverão ser registradas no sistema.
-
----
-
-## 📅 Levantamento de Requisitos(OBS: Entrevista feita com IA)
-
-O levantamento dos requisitos foi realizado por meio de uma entrevista com a responsável pela cantina da **Escola Novo Futuro (ENF)**.
-
-**Responsável pela cantina:** Sara Ribeiro de Souza  
-**Responsável pela entrevista:** Antonio Rodrigues da Silva Neto  
-**Data:** 23/09/2026
-
-link do formulário: https://github.com/antoniorodrigues20082006-lab/Trabalho-python-/blob/main/Formulario_Cantina_Estoque.pdf
----
-
-## 🚀 Situação do Projeto
-
-O projeto encontra-se em fase de desenvolvimento.
-
-### Etapas
-
-- [x] Levantamento de requisitos
-- [x] Identificação dos usuários
-- [x] Definição das principais funcionalidades
-- [x] Criação do protótipo inicial do painel
-- [x] Modelagem do banco de dados
-- [x] Desenvolvimento do sistema
-- [x] Implementação do controle de estoque
-- [x] Implementação das vendas
-- [x] Implementação dos alertas
-- [ ] Implementação dos backup
-- [ ] Testes
-- [ ] Documentação final
-
----
-## 📷 Protótipo do Painel
-
-O primeiro protótipo foi desenvolvido para representar visualmente a tela principal do sistema, com informações resumidas do estoque, produtos cadastrados, alertas e vendas.
-
-A interface poderá ser aprimorada durante o desenvolvimento, mantendo como objetivo principal a facilidade de uso e a visualização rápida das informações.
-
-link do protótipo: https://github.com/antoniorodrigues20082006-lab/Trabalho-python-/blob/main/Prot%C3%B3tipo%20no%20papel.jpeg
-
----
 ## 🖥️ Demonstração
 
-<div align="center">
-  Tela de criação de conta
-<img width="1600" height="900" alt="Captura de tela 2026-10-21 093202" src="https://github.com/user-attachments/assets/0dc60eff-bdd3-4d95-9c03-31b8a0635082" />
-  Tela inicial do sistema
-<img width="1600" height="900" alt="Captura de tela 2026-10-21 092105" src="https://github.com/user-attachments/assets/cea37c7a-521c-49e2-9537-6fbaee0fb1b7" />
-  Tela de cadastro de produtos
-<img width="1600" height="900" alt="Captura de tela 2026-10-21 093256" src="https://github.com/user-attachments/assets/7beab18a-06c2-4ac1-8644-e3f5fe8efe2b" />
-</div>
+A seguir, algumas telas da interface desenvolvida para o sistema.
 
-## 🎓 Finalidade Acadêmica
+### Criação de conta
 
-Este projeto está sendo desenvolvido como atividade acadêmica do curso de **Ciência da Computação**, tendo como finalidade aplicar conhecimentos de programação, banco de dados, levantamento de requisitos, modelagem de sistemas e desenvolvimento de interfaces.
+### Tela inicial
 
+### Cadastro de produtos
+
+### Protótipo inicial
+
+O protótipo em papel foi utilizado para planejar a disposição das informações e os principais elementos do painel.
+
+[📄 Visualizar o protótipo do painel](https://github.com/antoniorodrigues20082006-lab/Trabalho-python-/blob/main/Prot%C3%B3tipo%20no%20papel.jpeg)
+
+## 🗄️ Banco de dados e backup
+
+O projeto utiliza o SQLite como tecnologia prevista para persistência dos dados.
+
+O banco de dados poderá armazenar informações relacionadas a:
+
+* Produtos e categorias.
+* Quantidades em estoque.
+* Entradas e saídas.
+* Vendas realizadas.
+* Lotes e datas de validade.
+* Usuários do sistema.
+
+Também está prevista a criação periódica de cópias de segurança para reduzir o risco de perda das informações armazenadas.
+
+A rotina de backup e os mecanismos de recuperação deverão ser validados durante a etapa de testes.
+
+## 📝 Levantamento de requisitos
+
+O levantamento de requisitos foi documentado a partir de uma entrevista simulada com inteligência artificial, representando o cenário de uma cantina escolar.
+
+**Informações do levantamento:**
+
+* **Estabelecimento de referência:** Escola Novo Futuro (ENF).
+* **Responsável pela cantina no cenário:** Sara Ribeiro de Souza.
+* **Responsável pelo levantamento:** Antonio Rodrigues da Silva Neto.
+* **Data:** 23/09/2026.
+
+📄 [Consultar o formulário de levantamento de requisitos](https://github.com/antoniorodrigues20082006-lab/Trabalho-python-/blob/main/Formulario_Cantina_Estoque.pdf)
+
+> **Nota metodológica:** a entrevista foi simulada com IA para fins acadêmicos. Portanto, as informações representam um cenário de estudo, e não devem ser interpretadas como uma entrevista real realizada com uma funcionária do estabelecimento.
+
+## 🚧 Status do projeto
+
+O projeto encontra-se em desenvolvimento, com as seguintes etapas registradas:
+
+* [x] Levantamento de requisitos.
+* [x] Identificação dos usuários.
+* [x] Definição das funcionalidades principais.
+* [x] Criação do protótipo inicial do painel.
+* [x] Modelagem do banco de dados.
+* [x] Desenvolvimento do sistema.
+* [x] Implementação do controle de estoque.
+* [x] Implementação das vendas.
+* [x] Implementação dos alertas.
+* [ ] Implementação do backup.
+* [ ] Realização dos testes.
+* [ ] Finalização da documentação.
+
+> As etapas marcadas como concluídas devem corresponder ao que já foi efetivamente implementado e validado no código.
+
+## 🎓 Finalidade acadêmica
+
+Este projeto está sendo desenvolvido como atividade acadêmica do curso de **Ciência da Computação**.
+
+Seu propósito é aplicar conhecimentos de programação, banco de dados, levantamento de requisitos, modelagem de sistemas e desenvolvimento de interfaces em um problema prático.
+
+O desenvolvimento também busca proporcionar experiência na organização de um projeto de software, desde a identificação do problema até a implementação e os testes da solução.
+
+## 👥 Participantes
+
+Projeto acadêmico desenvolvido em colaboração por:
+
+* **Antonio Rodrigues da Silva Neto** — [GitHub](https://github.com/antoniorodrigues20082006-lab)
+* **Henrique** — [GitHub](https://github.com/henriquethe)
+* **José Vitor** _ [GitHub](https://github.com/Vmotovlogouslq)
 ---
 
-## 👨‍💻 Autor
-
-**Antonio Rodrigues da Silva Neto**
-
-Projeto acadêmico - Sistema de Estoque para Cantina Escolar.
+*Sistema Cantina — Projeto acadêmico de gerenciamento de estoque para cantina escolar.*
