@@ -195,8 +195,8 @@ O projeto encontra-se em desenvolvimento, com as seguintes etapas registradas:
 * [x] Implementação das vendas.
 * [x] Implementação dos alertas.
 * [ ] Implementação do backup.
-* [ ] Realização dos testes.
-* [ ] Finalização da documentação.
+* [x] Realização dos testes.
+* [x] Finalização da documentação.
 
 > As etapas marcadas como concluídas devem corresponder ao que já foi efetivamente implementado e validado no código.
 
